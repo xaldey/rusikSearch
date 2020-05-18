@@ -2,7 +2,7 @@ import requests as req
 from parse_site import main_array
 import csv
 from parse_site import UserAgent
-FILE = 'results/export.csv'
+FILE = 'results/export2-500.csv'
 
 link_array = []
 

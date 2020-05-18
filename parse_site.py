@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 UserAgent().chrome
 MAIN_URL = 'http://camgirlvideos.org/page/'
-FILE = 'results/export.csv'
+FILE = 'results/export2-500.csv'
 main_array = []
 
 
@@ -22,7 +22,7 @@ print('*' * 50)
 
 
 def make_array():
-    for page in range(2, 8):
+    for page in range(2, 500):
         page_link = MAIN_URL + str(page)
         print(page_link)
         response = requests.get(page_link, headers={'User-Agent': UserAgent().chrome})
@@ -38,7 +38,7 @@ def make_array():
                 'title': elem.find('h4', class_="entry-title").get_text(),
                 'link': elem.find('a').get('href'),
                 'image_link': elem.find('img').get('src'),
-                'date_published': elem.find('div', class_="metabar-pad").get_text(),
+                'date_published': elem.find('time', class_="date time published updated sc").get('datetime'),
             })
             # print(page_array)
         main_array.extend(page_array)
