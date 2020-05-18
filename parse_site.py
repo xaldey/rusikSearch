@@ -1,12 +1,12 @@
 import csv
-import requests
+import requests, shutil
 import time
 from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 
 UserAgent().chrome
 MAIN_URL = 'http://camgirlvideos.org/page/'
-FILE = 'export.csv'
+FILE = 'results/export.csv'
 main_array = []
 
 
@@ -45,6 +45,10 @@ def make_array():
         print('*' * 50)
         time.sleep(1)
         save_file(main_array, FILE)
+
+
+def save_image():
+    pass
 
 
 if __name__ == '__main__':
