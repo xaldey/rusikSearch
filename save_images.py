@@ -3,6 +3,7 @@ from parse_site import main_array
 import csv
 from parse_site import UserAgent
 FILE = 'results/export2-500.csv'
+DIR_FOR_IMAGES = 'results/'
 
 link_array = []
 
@@ -28,7 +29,7 @@ print('*' * 50)
 def download_image(array):
     for item in array:
         with req.get(item['link']) as rq:
-            with open(item['name'], 'wb') as file:
+            with open(DIR_FOR_IMAGES + item['name'], 'wb') as file:
                 file.write(rq.content)
                 print(f'Downloading {file}')
 
