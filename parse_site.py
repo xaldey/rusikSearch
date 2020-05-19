@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 UserAgent().chrome
 MAIN_URL = 'http://camgirlvideos.org/page/'
-FILE = 'results/export2-500.csv'
+FILE = 'results/export.csv'
 main_array = []
 
 
